@@ -1,0 +1,43 @@
+<header class="cabecalho">
+  <a
+    class="marca"
+    href="#inicio"
+    aria-label="Início"
+  >
+    <img class="marca-icone" src="../../../assets/icone-header.png" alt="Mascote Café & Código" />
+    <span>Café <em>&amp;</em> Código</span>
+  </a>
+
+  <button
+    class="botao-menu"
+    type="button"
+    [class.ativo]="menuAberto()"
+    [attr.aria-expanded]="menuAberto()"
+    [attr.aria-label]="menuAberto() ? 'Fechar menu de navegação' : 'Abrir menu de navegação'"
+    (click)="alternarMenu()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav
+    class="navegacao"
+    [class.aberta]="menuAberto()"
+    aria-label="Navegação principal"
+  >
+    <a href="#inicio" (click)="fecharMenu()">Início</a>
+    <a href="#sobre" (click)="fecharMenu()">Sobre nós</a>
+    <a href="#servicos" (click)="fecharMenu()">Serviços</a>
+    <a href="#contato" (click)="fecharMenu()">Contato</a>
+
+    <a
+      class="acao"
+      href="#agendar"
+      (click)="fecharMenu()"
+    >
+      Agendar agora
+      <span>→</span>
+    </a>
+  </nav>
+</header>
