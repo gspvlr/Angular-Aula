@@ -1,0 +1,223 @@
+:host {
+  display: block;
+  margin-top: auto;
+}
+
+.rodape {
+  background: #edf5e1;
+  border-top: 2px solid #8ee4af;
+  box-sizing: border-box;
+  color: #05386b;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  position: relative;
+  z-index: 5;
+}
+
+.rodape::before {
+  background: repeating-linear-gradient(90deg, #379683 0 5px, transparent 5px 10px);
+  content: '';
+  height: 2px;
+  left: 0;
+  opacity: .4;
+  position: absolute;
+  right: 0;
+  top: -2px;
+}
+
+.rodape-conteudo {
+  box-sizing: border-box;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 3.5rem 7% 2.5rem;
+}
+
+.marca-coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.marca {
+  align-items: center;
+  color: #05386b;
+  display: inline-flex;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 1.22rem;
+  font-weight: 800;
+  gap: .65rem;
+  letter-spacing: -.06em;
+  text-decoration: none;
+}
+
+.marca em {
+  color: #379683;
+  font-style: normal;
+}
+
+.marca-icone {
+  border-radius: 50%;
+  height: 44px;
+  object-fit: cover;
+  object-position: center 26%;
+  transition: filter 180ms ease, transform 180ms ease;
+  width: 44px;
+}
+
+.marca:hover .marca-icone {
+  filter: drop-shadow(0 3px 0 #379683);
+  transform: rotate(-4deg) scale(1.08);
+}
+
+.descricao {
+  color: #05386b;
+  font-size: .88rem;
+  line-height: 1.55;
+  margin: 0;
+  opacity: .85;
+}
+.coluna-titulo {
+  color: #05386b;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin: 0 0 1.2rem;
+  text-transform: uppercase;
+}
+
+.rodape-links {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.rodape-links a {
+  align-items: center;
+  color: #05386b;
+  display: inline-flex;
+  font-size: .84rem;
+  font-weight: 700;
+  position: relative;
+  text-decoration: none;
+  transition: color 180ms ease, transform 180ms ease;
+  width: fit-content;
+}
+
+.rodape-links a::before {
+  color: #379683;
+  content: '> ';
+  opacity: 0;
+  position: absolute;
+  right: 100%;
+  transform: translateX(4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.rodape-links a::after {
+  background: #5cdb95;
+  bottom: -.25rem;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 220ms ease;
+  width: 100%;
+}
+
+.rodape-links a:hover {
+  color: #379683;
+  transform: translateX(6px);
+}
+
+.rodape-links a:hover::before {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+.rodape-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.dica {
+  background: rgba(255, 255, 255, 0.45);
+  border-left: 3px solid #379683;
+  color: #05386b;
+  font-size: .82rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 0 1.2rem;
+  padding: .6rem .8rem;
+}
+
+.botao-topo {
+  align-items: center;
+  background: #5cdb95;
+  border: 2px solid #05386b;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 #05386b;
+  color: #05386b;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: .82rem;
+  font-weight: 700;
+  gap: .4rem;
+  padding: .6rem .95rem;
+  transition: all 180ms ease;
+}
+
+.botao-topo:hover {
+  background: #379683;
+  box-shadow: 1px 1px 0 #05386b;
+  color: #edf5e1;
+  transform: translate(2px, 2px);
+}
+
+.rodape-inferior {
+  align-items: center;
+  border-top: 1px solid rgba(5, 56, 107, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: .8rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 1.2rem 7%;
+}
+
+.rodape-inferior p {
+  margin: .3rem 0;
+}
+
+.stack-info span {
+  background: #8ee4af;
+  border-radius: 3px;
+  color: #05386b;
+  font-weight: 700;
+  padding: .15rem .45rem;
+}
+
+@media (max-width: 960px) {
+  .rodape-conteudo {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .rodape-conteudo {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 6% 1.8rem;
+  }
+
+  .rodape-inferior {
+    flex-direction: column;
+    text-align: center;
+    gap: .5rem;
+  }
+}

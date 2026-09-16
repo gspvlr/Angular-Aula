@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './rodape.css',
   templateUrl: './rodape.html',
 })
-export class Rodape {}
+export class Rodape {
+  voltarAoTopo(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}

@@ -1,1 +1,49 @@
-<p>rodape works!</p>
+<footer class="rodape">
+  <div class="rodape-conteudo">
+    <div class="rodape-coluna marca-coluna">
+      <a class="marca" href="#inicio" aria-label="Início">
+        <img class="marca-icone" src="../../../assets/icone-header.png" alt="Mascote Café & Código" />
+        <span>Café <em>&amp;</em> Código</span>
+      </a>
+      <p class="descricao">
+        O ponto de encontro entre a cafeína e o código limpo. Conectando pessoas e tecnologia com modernidade.
+      </p>
+    </div>
+
+    <div class="rodape-coluna">
+      <h3 class="coluna-titulo">> Navegação</h3>
+      <nav class="rodape-links" aria-label="Links do rodapé">
+        <a href="#inicio">Início</a>
+        <a href="#cadastro">Cadastre-se</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+
+    <div class="rodape-coluna">
+      <h3 class="coluna-titulo">> Comunidade</h3>
+      <div class="rodape-links">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+
+    <div class="rodape-coluna">
+      <h3 class="coluna-titulo">> Coffee &amp; Dev</h3>
+      <p class="dica">
+        "Primeiro resolva o problema, depois tome mais um gole de café e escreva o código."
+      </p>
+      <button class="botao-topo" type="button" (click)="voltarAoTopo()" aria-label="Voltar ao início">
+        Voltar ao Topo ↑
+      </button>
+    </div>
+  </div>
+
+  <div class="rodape-inferior">
+    <p>&copy; 2026 <strong>Café &amp; Código</strong>. Todos os direitos reservados.</p>
+    <p class="stack-info">Feito com <span>Angular 22</span> &amp; <span>Café</span> ☕</p>
+  </div>
+</footer>

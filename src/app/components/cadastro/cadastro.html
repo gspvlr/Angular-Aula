@@ -1,0 +1,140 @@
+<section class="secao-cadastro" id="cadastro">
+  <div class="cartao-cadastro">
+    <div class="terminal-barra">
+      <div class="terminal-botoes">
+        <span class="ponto ponto-fechar"></span>
+        <span class="ponto ponto-minimizar"></span>
+        <span class="ponto ponto-maximizar"></span>
+      </div>
+      <span class="terminal-titulo">bash - form_cadastro.sh</span>
+    </div>
+
+    <div class="cadastro-cabecalho">
+      <span class="tag-secao">> formulário_de_membros</span>
+      <h2 class="titulo">Cadastro Café <em>&amp;</em> Código</h2>
+      <p class="subtitulo">
+        Preencha suas informações para participar da comunidade e receber novidades exclusivas.
+      </p>
+    </div>
+
+    <form class="formulario" (ngSubmit)="cadastrar()">
+      <!-- 1. Input Padrão: Nome -->
+      <div class="campo-grupo">
+        <label for="campo-nome" class="campo-rotulo">
+          <span class="rotulo-icone">👤</span> 1. Nome Completo (Padrão texto)
+        </label>
+        <div class="input-container">
+          <input
+            id="campo-nome"
+            name="nome"
+            type="text"
+            class="campo-input"
+            placeholder="Ex: Alan Turing"
+            [(ngModel)]="nome"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- 2. Input Padrão: E-mail -->
+      <div class="campo-grupo">
+        <label for="campo-email" class="campo-rotulo">
+          <span class="rotulo-icone">✉️</span> 2. E-mail de Contato (Padrão e-mail)
+        </label>
+        <div class="input-container">
+          <input
+            id="campo-email"
+            name="email"
+            type="email"
+            class="campo-input"
+            placeholder="Ex: alanturing@cafeecodigo.dev"
+            [(ngModel)]="email"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- 3. Input de Lista: Select -->
+      <div class="campo-grupo">
+        <label for="campo-area" class="campo-rotulo">
+          <span class="rotulo-icone">📋</span> 3. Área de Atuação / Interesse (Lista)
+        </label>
+        <div class="input-container select-container">
+          <select
+            id="campo-area"
+            name="area"
+            class="campo-input campo-select"
+            [(ngModel)]="area"
+            required
+          >
+            <option value="" disabled selected>Selecione uma especialidade da lista...</option>
+            @for (opcao of areasDisponiveis; track opcao) {
+              <option [value]="opcao">{{ opcao }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <!-- 4. Input de Escrita Livre: Textarea -->
+      <div class="campo-grupo">
+        <label for="campo-mensagem" class="campo-rotulo">
+          <span class="rotulo-icone">✍️</span> 4. Sobre Você / Mensagem (Escrita Livre)
+        </label>
+        <div class="input-container">
+          <textarea
+            id="campo-mensagem"
+            name="mensagem"
+            class="campo-input campo-textarea"
+            rows="4"
+            placeholder="Escreva livremente sobre seus projetos atuais, linguagens favoritas ou o tipo de café que prefere..."
+            [(ngModel)]="mensagem"
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Ações do Formulário -->
+      <div class="acoes-formulario">
+        <button type="submit" class="botao-submeter">
+          Cadastrar e Visualizar Dados <span>→</span>
+        </button>
+        <button type="button" class="botao-limpar" (click)="limpar()">
+          Limpar Campos
+        </button>
+      </div>
+    </form>
+
+    <!-- Exibição dos Valores Retornados / Confirmados -->
+    @if (dadosCadastrados(); as dados) {
+      <div class="painel-confirmacao">
+        <div class="confirmacao-cabecalho">
+          <span class="status-sucesso">[STATUS 200 OK]</span>
+          <h3>Valores Cadastrados com Sucesso:</h3>
+          <span class="timestamp">{{ dados.dataHora }}</span>
+        </div>
+
+        <div class="dados-grid">
+          <div class="dado-item">
+            <span class="dado-chave">> Nome:</span>
+            <span class="dado-valor">{{ dados.nome }}</span>
+          </div>
+
+          <div class="dado-item">
+            <span class="dado-chave">> E-mail:</span>
+            <span class="dado-valor">{{ dados.email }}</span>
+          </div>
+
+          <div class="dado-item">
+            <span class="dado-chave">> Área (Lista):</span>
+            <span class="dado-valor badge-area">{{ dados.area }}</span>
+          </div>
+
+          <div class="dado-item dado-item-completo">
+            <span class="dado-chave">> Escrita Livre (Mensagem):</span>
+            <blockquote class="dado-mensagem">"{{ dados.mensagem }}"</blockquote>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

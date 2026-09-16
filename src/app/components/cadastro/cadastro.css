@@ -1,0 +1,118 @@
+:host { display: block; padding: 3rem 1.5rem; }
+.secao-cadastro { display: flex; justify-content: center; margin: 0 auto; max-width: 860px; }
+.cartao-cadastro {
+  background: #fff; border: 3px solid #05386b; border-radius: 8px;
+  box-shadow: 7px 7px 0 #05386b; box-sizing: border-box; overflow: hidden; width: 100%;
+}
+.terminal-barra {
+  align-items: center; background: #05386b; box-sizing: border-box;
+  display: flex; height: 38px; justify-content: space-between; padding: 0 1rem;
+}
+.terminal-botoes { display: flex; gap: 7px; }
+.ponto { border-radius: 50%; display: inline-block; height: 12px; width: 12px; }
+.ponto-fechar { background: #ff5f56; }
+.ponto-minimizar { background: #ffbd2e; }
+.ponto-maximizar { background: #27c93f; }
+.terminal-titulo {
+  color: #edf5e1; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: .8rem; font-weight: 600; opacity: .9;
+}
+.cadastro-cabecalho { background: #f7faf2; border-bottom: 2px dashed #8ee4af; padding: 2rem 2.2rem 1.5rem; }
+.tag-secao {
+  color: #379683; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: .82rem; font-weight: 700; text-transform: uppercase;
+}
+.titulo {
+  color: #05386b; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 1.8rem; font-weight: 800; letter-spacing: -.04em; margin: .4rem 0 .5rem;
+}
+.titulo em { color: #379683; font-style: normal; }
+.subtitulo {
+  color: #379683; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: .95rem; line-height: 1.5; margin: 0;
+}
+.formulario { box-sizing: border-box; display: flex; flex-direction: column; gap: 1.5rem; padding: 2.2rem; }
+.campo-grupo { display: flex; flex-direction: column; gap: .5rem; }
+.campo-rotulo {
+  align-items: center; color: #05386b; display: inline-flex;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: .92rem; font-weight: 700; gap: .5rem;
+}
+.rotulo-icone { font-size: 1.05rem; }
+.campo-input {
+  background: #fafdf7; border: 2px solid #05386b; border-radius: 6px;
+  box-shadow: 3px 3px 0 rgba(5, 56, 107, .15); box-sizing: border-box; color: #05386b;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: .95rem;
+  outline: none; padding: .75rem 1rem;
+  transition: border-color 160ms, box-shadow 160ms, transform 160ms; width: 100%;
+}
+.campo-input:focus {
+  background: #fff; border-color: #379683; box-shadow: 4px 4px 0 #05386b; transform: translate(-1px, -1px);
+}
+.campo-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2305386b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-position: right 1rem center; background-repeat: no-repeat; background-size: 1.1em;
+  cursor: pointer; padding-right: 2.8rem;
+}
+.campo-textarea { line-height: 1.5; resize: vertical; }
+.acoes-formulario { align-items: center; display: flex; flex-wrap: wrap; gap: 1rem; margin-top: .6rem; }
+.botao-submeter {
+  align-items: center; background: #5cdb95; border: 2px solid #05386b; border-radius: 6px;
+  box-shadow: 4px 4px 0 #05386b; color: #05386b; cursor: pointer; display: inline-flex;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: .98rem; font-weight: 800;
+  gap: .6rem; padding: .85rem 1.6rem; transition: all 180ms ease;
+}
+.botao-submeter span { font-size: 1.15rem; line-height: 0; transition: transform 180ms ease; }
+.botao-submeter:hover {
+  background: #379683; box-shadow: 2px 2px 0 #05386b; color: #edf5e1; transform: translate(2px, 2px);
+}
+.botao-submeter:hover span { transform: translateX(4px); }
+.botao-limpar {
+  background: transparent; border: 2px solid #05386b; border-radius: 6px;
+  box-shadow: 3px 3px 0 #05386b; color: #05386b; cursor: pointer;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: .9rem; font-weight: 700;
+  padding: .85rem 1.4rem; transition: all 180ms ease;
+}
+.botao-limpar:hover { background: #edf5e1; box-shadow: 1px 1px 0 #05386b; transform: translate(2px, 2px); }
+.painel-confirmacao {
+  animation: deslizarEntrada 260ms ease-out forwards; background: #edf5e1;
+  border-top: 2px dashed #05386b; box-sizing: border-box;
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; padding: 1.8rem 2.2rem 2.2rem;
+}
+@keyframes deslizarEntrada {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.confirmacao-cabecalho {
+  align-items: center; border-bottom: 2px solid #8ee4af; display: flex; flex-wrap: wrap;
+  gap: .8rem; padding-bottom: 1rem;
+}
+.status-sucesso {
+  background: #05386b; border-radius: 4px; color: #5cdb95; font-size: .8rem; font-weight: 800;
+  padding: .25rem .6rem;
+}
+.confirmacao-cabecalho h3 { color: #05386b; font-size: 1.1rem; font-weight: 800; margin: 0; }
+.timestamp { color: #379683; font-size: .8rem; font-weight: 600; margin-left: auto; }
+.dados-grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin-top: 1.4rem; }
+.dado-item {
+  background: #fff; border: 2px solid #05386b; border-radius: 6px;
+  box-shadow: 3px 3px 0 #8ee4af; box-sizing: border-box; display: flex; flex-direction: column;
+  gap: .35rem; padding: .85rem 1.1rem;
+}
+.dado-item-completo { grid-column: 1 / -1; }
+.dado-chave { color: #379683; font-size: .8rem; font-weight: 700; text-transform: uppercase; }
+.dado-valor { color: #05386b; font-size: .98rem; font-weight: 700; word-break: break-word; }
+.badge-area { color: #05386b; }
+.dado-mensagem {
+  border-left: 3px solid #5cdb95; color: #05386b; font-size: .95rem; font-style: italic;
+  line-height: 1.5; margin: .3rem 0 0; padding-left: .8rem; white-space: pre-wrap;
+}
+@media (max-width: 680px) {
+  :host { padding: 1.5rem 1rem; }
+  .cadastro-cabecalho, .formulario, .painel-confirmacao { padding: 1.3rem; }
+  .dados-grid { grid-template-columns: 1fr; }
+  .titulo { font-size: 1.4rem; }
+  .acoes-formulario { flex-direction: column; width: 100%; }
+  .botao-submeter, .botao-limpar { justify-content: center; width: 100%; }
+}
