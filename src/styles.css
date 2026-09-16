@@ -1,2 +1,61 @@
-html { background: #edf5e1; scroll-behavior: smooth; }
-body { margin: 0; }
+:root {
+  --cor-fundo: #edf5e1;
+  --cor-texto: #05386b;
+  --cor-texto-muted: #379683;
+  --cor-destaque: #379683;
+  --cor-primaria: #5cdb95;
+  --cor-borda: #8ee4af;
+  --cor-card: #ffffff;
+  --cor-card-header: #f7faf2;
+  --cor-input-bg: #fafdf7;
+  --cor-sombra: #05386b;
+  --cor-terminal-barra: #05386b;
+}
+
+html.dark-mode {
+  --cor-fundo: #07131e;
+  --cor-texto: #e2f1e7;
+  --cor-texto-muted: #8ee4af;
+  --cor-destaque: #5cdb95;
+  --cor-primaria: #379683;
+  --cor-borda: #174233;
+  --cor-card: #0e2030;
+  --cor-card-header: #091622;
+  --cor-input-bg: #07131e;
+  --cor-sombra: #020910;
+  --cor-terminal-barra: #051320;
+}
+
+html {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

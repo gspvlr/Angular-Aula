@@ -18,10 +18,13 @@
     </div>
 
     <form class="formulario" (ngSubmit)="cadastrar()">
-      <!-- 1. Input Padrão: Nome -->
       <div class="campo-grupo">
         <label for="campo-nome" class="campo-rotulo">
-          <span class="rotulo-icone">👤</span> 1. Nome Completo (Padrão texto)
+          <svg class="rotulo-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          1. Nome Completo (Padrão texto)
         </label>
         <div class="input-container">
           <input
@@ -36,10 +39,13 @@
         </div>
       </div>
 
-      <!-- 2. Input Padrão: E-mail -->
       <div class="campo-grupo">
         <label for="campo-email" class="campo-rotulo">
-          <span class="rotulo-icone">✉️</span> 2. E-mail de Contato (Padrão e-mail)
+          <svg class="rotulo-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          2. E-mail de Contato (Padrão e-mail)
         </label>
         <div class="input-container">
           <input
@@ -54,10 +60,17 @@
         </div>
       </div>
 
-      <!-- 3. Input de Lista: Select -->
       <div class="campo-grupo">
         <label for="campo-area" class="campo-rotulo">
-          <span class="rotulo-icone">📋</span> 3. Área de Atuação / Interesse (Lista)
+          <svg class="rotulo-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+            <path d="M12 11h4"/>
+            <path d="M12 16h4"/>
+            <path d="M8 11h.01"/>
+            <path d="M8 16h.01"/>
+          </svg>
+          3. Área de Atuação / Interesse (Lista)
         </label>
         <div class="input-container select-container">
           <select
@@ -75,17 +88,20 @@
         </div>
       </div>
 
-      <!-- 4. Input de Escrita Livre: Textarea -->
       <div class="campo-grupo">
         <label for="campo-mensagem" class="campo-rotulo">
-          <span class="rotulo-icone">✍️</span> 4. Sobre Você / Mensagem (Escrita Livre)
+          <svg class="rotulo-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+            <path d="m15 5 4 4"/>
+          </svg>
+          4. Sobre Você / Mensagem (Escrita Livre)
         </label>
         <div class="input-container">
           <textarea
             id="campo-mensagem"
             name="mensagem"
             class="campo-input campo-textarea"
-            rows="4"
+            rows="3"
             placeholder="Escreva livremente sobre seus projetos atuais, linguagens favoritas ou o tipo de café que prefere..."
             [(ngModel)]="mensagem"
             required
@@ -93,7 +109,6 @@
         </div>
       </div>
 
-      <!-- Ações do Formulário -->
       <div class="acoes-formulario">
         <button type="submit" class="botao-submeter">
           Cadastrar e Visualizar Dados <span>→</span>
@@ -104,7 +119,6 @@
       </div>
     </form>
 
-    <!-- Exibição dos Valores Retornados / Confirmados -->
     @if (dadosCadastrados(); as dados) {
       <div class="painel-confirmacao">
         <div class="confirmacao-cabecalho">

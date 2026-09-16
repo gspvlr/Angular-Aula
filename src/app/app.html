@@ -1,8 +1,21 @@
 <div class="layout-app">
   <app-cabecalho />
   <main class="conteudo-principal">
-    <router-outlet />
-    <app-cadastro />
+    <app-pixel-snow 
+      [color]="themeService.isDarkMode() ? '#5cdb95' : '#379683'"
+      [flakeSize]="0.01"
+      [minFlakeSize]="1.25"
+      [pixelResolution]="200"
+      [speed]="1.25"
+      [density]="0.3"
+      [direction]="125"
+      [brightness]="1">
+    </app-pixel-snow>
+
+    <div class="conteudo-corpo">
+      <router-outlet />
+      <app-cadastro />
+    </div>
   </main>
   <app-rodape />
 </div>

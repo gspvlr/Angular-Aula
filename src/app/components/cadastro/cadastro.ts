@@ -21,7 +21,7 @@ export class Cadastro {
   area = '';
   mensagem = '';
 
-  areasDisponiveis = [
+  readonly areasDisponiveis: readonly string[] = [
     'Desenvolvimento Frontend (Angular / Web)',
     'Desenvolvimento Backend (Node / Java / C#)',
     'Full Stack Developer',
@@ -31,35 +31,17 @@ export class Cadastro {
     'Inteligência Artificial & Dados',
   ];
 
-  // Armazena os dados do último cadastro para exibição imediata na tela
-  dadosCadastrados = signal<DadosFormulario | null>(null);
+  readonly dadosCadastrados = signal<DadosFormulario | null>(null);
 
   cadastrar(): void {
-    if (!this.nome.trim() || !this.email.trim() || !this.area || !this.mensagem.trim()) {
-      alert('⚠️ Atenção: Por favor, preencha todos os campos antes de cadastrar!');
+    if (!this.isFormularioValido()) {
+      alert('[AVISO] Por favor, preencha todos os campos antes de cadastrar!');
       return;
     }
 
-    const novosDados: DadosFormulario = {
-      nome: this.nome.trim(),
-      email: this.email.trim(),
-      area: this.area,
-      mensagem: this.mensagem.trim(),
-      dataHora: new Date().toLocaleString('pt-BR'),
-    };
-
+    const novosDados = this.criarDadosFormulario();
     this.dadosCadastrados.set(novosDados);
-
-    const mensagemAviso =
-      '🎉 CADASTRO REALIZADO COM SUCESSO!\n\n' +
-      'Valores cadastrados:\n' +
-      `• Nome: ${novosDados.nome}\n` +
-      `• E-mail: ${novosDados.email}\n` +
-      `• Área Selecionada: ${novosDados.area}\n` +
-      `• Mensagem (Escrita livre): ${novosDados.mensagem}\n\n` +
-      `Registrado em: ${novosDados.dataHora}`;
-
-    alert(mensagemAviso);
+    alert(this.formatarMensagemSucesso(novosDados));
   }
 
   limpar(): void {
@@ -68,5 +50,36 @@ export class Cadastro {
     this.area = '';
     this.mensagem = '';
     this.dadosCadastrados.set(null);
+  }
+
+  private isFormularioValido(): boolean {
+    return Boolean(
+      this.nome.trim() &&
+      this.email.trim() &&
+      this.area.trim() &&
+      this.mensagem.trim()
+    );
+  }
+
+  private criarDadosFormulario(): DadosFormulario {
+    return {
+      nome: this.nome.trim(),
+      email: this.email.trim(),
+      area: this.area,
+      mensagem: this.mensagem.trim(),
+      dataHora: new Date().toLocaleString('pt-BR'),
+    };
+  }
+
+  private formatarMensagemSucesso(dados: DadosFormulario): string {
+    return (
+      '[SUCESSO] CADASTRO REALIZADO COM SUCESSO!\n\n' +
+      'Valores cadastrados:\n' +
+      `• Nome: ${dados.nome}\n` +
+      `• E-mail: ${dados.email}\n` +
+      `• Área Selecionada: ${dados.area}\n` +
+      `• Mensagem (Escrita livre): ${dados.mensagem}\n\n` +
+      `Registrado em: ${dados.dataHora}`
+    );
   }
 }

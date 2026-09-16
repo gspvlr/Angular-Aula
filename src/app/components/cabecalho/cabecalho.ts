@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { ThemeService } from '../../services/theme';
 
 @Component({
   imports: [],
@@ -7,7 +8,16 @@ import { Component, signal } from '@angular/core';
   templateUrl: './cabecalho.html',
 })
 export class Cabecalho {
-  menuAberto = signal(false);
+  private readonly themeService = inject(ThemeService);
+  public readonly menuAberto = signal<boolean>(false);
+
+  isDarkMode(): boolean {
+    return this.themeService.isDarkMode();
+  }
+
+  alternarTema(): void {
+    this.themeService.toggleTheme();
+  }
 
   alternarMenu(): void {
     this.menuAberto.update((aberto) => !aberto);

@@ -18,4 +18,18 @@ describe('Cabecalho', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should toggle theme when alternarTema is called', () => {
+    const initialTheme = component.isDarkMode();
+    component.alternarTema();
+    expect(component.isDarkMode()).toBe(!initialTheme);
+  });
+
+  it('should toggle and close mobile menu', () => {
+    expect(component.menuAberto()).toBe(false);
+    component.alternarMenu();
+    expect(component.menuAberto()).toBe(true);
+    component.fecharMenu();
+    expect(component.menuAberto()).toBe(false);
+  });
 });
