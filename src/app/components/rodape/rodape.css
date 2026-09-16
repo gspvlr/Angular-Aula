@@ -58,6 +58,20 @@
   font-style: normal;
 }
 
+.marca-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.marca-autor {
+  color: var(--cor-destaque);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
 .marca-icone {
   border-radius: 50%;
   height: 44px;
@@ -205,6 +219,18 @@
 
 .rodape-inferior p {
   margin: .3rem 0;
+}
+
+.rodape-inferior a {
+  color: var(--cor-destaque);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.rodape-inferior a:hover {
+  color: var(--cor-primaria);
+  text-decoration: underline;
 }
 
 .stack-info span {

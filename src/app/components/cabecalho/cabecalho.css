@@ -27,6 +27,16 @@
 
 .marca em { color: var(--cor-destaque); font-style: normal; }
 
+.marca-info { display: flex; flex-direction: column; gap: 1px; }
+
+.marca-autor {
+  color: var(--cor-destaque);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
 .marca-icone {
   object-fit: cover;
   object-position: center 26%;
